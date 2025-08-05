@@ -1,7 +1,7 @@
 #include "queue.h"
 
 // probably my favourite implementation of a lock-free ring buffer
-// I have come across, consider passing by Chirs Wellons blog that
+// I have come across, consider passing by Chris Wellon's blog that
 // explains how this works: https://nullprogram.com/blog/2022/05/14/
 // I highly recommend his material on arena's and hashmaps as well.
 
