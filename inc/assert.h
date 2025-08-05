@@ -11,5 +11,7 @@
     }\
   } while (0)
 
+#define unused(x) (void)x
+
 #endif
 

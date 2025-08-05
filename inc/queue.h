@@ -7,7 +7,7 @@ typedef unsigned int u32;
 typedef _Atomic u32 queue;
 
 // sets the maximum queue size in powers of 2
-#define EXP 5
+#define EXP 4
 
 int queue_pop(queue* q);
 void queue_pop_commit(queue* q);

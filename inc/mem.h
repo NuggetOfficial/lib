@@ -26,4 +26,6 @@ void *alloc( arena* a, size objsize, size align, size num );
 #define newx(a,b,c,d, ...) d
 #define new(...) newx(__VA_ARGS__, new3, new2) (__VA_ARGS__)
 
+arena arena_new(size cap);
+
 #endif
