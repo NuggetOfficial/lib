@@ -7,6 +7,7 @@
 #include <unistd.h>  /* posix only */
 
 #include "queue.h"
+#include "mem.h"
 
 #define unused(x) (void)x
 
