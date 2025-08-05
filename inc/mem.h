@@ -24,6 +24,6 @@ void *alloc( arena* a, size objsize, size align, size num );
 #define new3(a,t,n) (t *)alloc(a, sizeof(t), _Alignof(t), n)
 #define new2(a,t)   (t *)alloc(a, sizeof(t), _Alignof(t), 1)
 #define newx(a,b,c,d, ...) d
-#define new(...) newx(__VA_ARGS__, new3, new2){__VA_ARGS__}
+#define new(...) newx(__VA_ARGS__, new3, new2) (__VA_ARGS__)
 
 #endif
