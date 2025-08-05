@@ -38,14 +38,12 @@ int main( void )
   arena perm = arena_new(512);
   sigctx *sig = new(&perm, sigctx);
   libctx *lib = new(&perm, libctx); 
-
-  printf("%li\n",perm.end - perm.beg);
+  
   siginit(sig);
   libinit(lib);
+  
   // attaching callbacks to signals can be done before spawing
   // our handler thread. Can also still be done after spawing.
-  // currently we only attach not deattach but for hot-loading
-  // this would be required (function pointer updates)
   attach(disconnect, on_exit);
   attach(hotload, on_reload);
   attach(ping, lib->ping);
@@ -72,7 +70,7 @@ int main( void )
   // the on_exit cb gets called regardless but that
   // requires architectural decisions I dont want to 
   // make right now,
-  // also because mainloop is not infinite this never
+  // also because mainloop is now infinite this never
   // gets called, consider keyboard input thread.
   emit(disconnect, 0);
 
